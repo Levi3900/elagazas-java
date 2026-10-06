@@ -125,4 +125,16 @@ public class ElagazasGyakorlas {
             return bank - amount;
         }
     }
+    public static String haromszog(int a, int b, int c) {
+        if ((a + b) > c && (a + c > b && (b + c) > a)) {
+            if (a == b && a == c && b == c) {
+                return "egyenlő oldalú";
+            } else if (a == b || b == c) {
+                return "egyenlő szárú";
+            } else {
+                return "általános háromszog";
+            }
+        }
+        return "nem";
+    }
 }

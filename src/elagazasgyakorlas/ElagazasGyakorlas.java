@@ -13,7 +13,7 @@ public class ElagazasGyakorlas {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int userInput = input.nextInt();
-        System.out.println(viszgaeredmneyek(userInput));
+        System.out.println(homerseklet(userInput));
     }
     public static String viszgaeredmneyek(int szam) {
         String eredmeny = "";
@@ -27,10 +27,28 @@ public class ElagazasGyakorlas {
             eredmeny = "jó";
         } else {
             if (szam == 100) {
-                return "gratulállok! 100%";
+                eredmeny = "gratulállok 100%!!";
+                return eredmeny;
             }
         eredmeny = "jeles";
         }
         return eredmeny;
+    }
+    
+    public static String homerseklet(int num) {
+        if (num <= 0) {
+            if (num == 0) {
+                return "pontosan 0 fok van!";
+            }
+            return "fagy";
+        } else if (num <= 7) {
+            return "hideg";
+        } else if (num <= 15) {
+            return "kellemes";
+        } else if (num <= 25) {
+            return "meleg";
+        } else {
+            return "forró";
+        }
     }
 }

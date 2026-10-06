@@ -13,7 +13,8 @@ public class ElagazasGyakorlas {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int userInput = input.nextInt();
-        System.out.println(homerseklet(userInput));
+        boolean diakigazolvany = true;
+        System.out.println(mozi(userInput, diakigazolvany));
     }
     public static String viszgaeredmneyek(int szam) {
         String eredmeny = "";
@@ -49,6 +50,21 @@ public class ElagazasGyakorlas {
             return "meleg";
         } else {
             return "forró";
+        }
+    }
+    
+    public static String mozi(int age, boolean diak) {
+        if (age <= 5) {
+            return "ingyenes";
+        } else if (age <= 13) {
+            return "gyerek jegy, 1200Ft";
+        } else if (age <= 17 && diak) {
+            return "diák, 1600Ft";
+        } else if (age > 18) {
+            if (diak) {
+                return "20% kedvezmény, felnőtt 2200Ft";
+            }
+            return "felnőtt 2200Ft";
         }
     }
 }

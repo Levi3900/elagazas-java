@@ -60,7 +60,7 @@ public class ElagazasGyakorlas {
             return "gyerek jegy, 1200Ft";
         } else if (age <= 17 && diak) {
             return "diák, 1600Ft";
-        } else if (age > 18) {
+        } else {
             if (diak) {
                 return "20% kedvezmény, felnőtt 2200Ft";
             }

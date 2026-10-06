@@ -16,7 +16,7 @@ public class ElagazasGyakorlas {
         
         boolean diakigazolvany = true;
         boolean kupon = true;
-        System.out.println(parkolas(userInput));
+        System.out.println(atm(userInput));
     }
     public static String viszgaeredmneyek(int szam) {
         String eredmeny = "";
@@ -91,5 +91,38 @@ public class ElagazasGyakorlas {
             menu += " +10% kedvezmény";
         }
         return menu;
+    }
+    
+    public static String parkolas(int hours) {
+        if (hours > 5) { 
+            return "5 óránál magasabb értéket nem lehet beírni!";
+        }
+        switch (hours) {
+            case (1):
+                return "500Ft";
+                //break;
+            case (2): 
+                return "900Ft";
+            case (3):
+                return "1300Ft";
+            default:
+                return "1500Ft";
+        }
+    }
+    
+    public static int atm(int amount) {
+        int bank = 5000;
+        if (amount < 0) {
+            System.out.println("helytelen érték");
+            return bank;
+        } else if (amount > bank) {
+            System.out.println("nincs elég fedezet");
+            return bank;
+        } else if (amount % 1000 != 0) {
+            System.out.println("Helytelen érték");
+            return bank;
+        } else {
+            return bank - amount;
+        }
     }
 }

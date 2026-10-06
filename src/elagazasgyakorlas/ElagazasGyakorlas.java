@@ -13,8 +13,10 @@ public class ElagazasGyakorlas {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int userInput = input.nextInt();
+        
         boolean diakigazolvany = true;
-        System.out.println(mozi(userInput, diakigazolvany));
+        boolean kupon = true;
+        System.out.println(parkolas(userInput));
     }
     public static String viszgaeredmneyek(int szam) {
         String eredmeny = "";
@@ -66,5 +68,28 @@ public class ElagazasGyakorlas {
             }
             return "felnőtt 2200Ft";
         }
+    }
+    
+    public static String etterem(int input, boolean discount) {
+        String menu = "";
+        
+        // Lehetne switch is!
+        // switch (input) {
+        // case (szam):/ { vlmi }
+        // default: vlmi
+        //}
+        if (input == 1) {
+            menu = "Hamburger menü, 2200ft";
+        } else if (input == 2) {
+            menu = "Pizza menü, 2500Ft";
+        } else if (input == 3) {
+            menu = "Saláta menü";
+        } else {
+            return "nem helyes szám";
+        }
+        if (discount) {
+            menu += " +10% kedvezmény";
+        }
+        return menu;
     }
 }
